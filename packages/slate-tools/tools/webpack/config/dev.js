@@ -17,13 +17,13 @@ const HtmlWebpackIncludeLiquidStylesPlugin = require('../html-webpack-include-ch
 const config = new SlateConfig(require('../../../slate-tools.schema'));
 
 // add hot-reload related code to entry chunks
-Object.keys(entry.entry).forEach((name) => {
+Object.keys(entry.entry).forEach(name => {
   entry.entry[name] = [path.join(__dirname, '../hot-client.js')].concat(
-    entry.entry[name],
+    entry.entry[name]
   );
 });
 
-module.exports = merge([
+module.exports = merge.smart([
   core,
   entry,
   babel,

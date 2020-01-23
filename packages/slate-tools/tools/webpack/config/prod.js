@@ -20,7 +20,7 @@ const getTemplateEntrypoints = require('./utilities/get-template-entrypoints');
 const HtmlWebpackIncludeLiquidStylesPlugin = require('../html-webpack-include-chunks');
 const config = new SlateConfig(require('../../../slate-tools.schema'));
 
-module.exports = merge([
+module.exports = merge.smart([
   core,
   entry,
   babel,
